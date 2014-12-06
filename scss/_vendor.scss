@@ -258,17 +258,21 @@ html {
 		float: right;
 	}
 }
-@media (max-width: $breakpoint-medium-max) {
+@media (max-width: $breakpoint-small-max) {
 	.ba-mt-medium {
 		margin-top: $container-padding-horizontal !important;
 	}
 	.ba-mt-small-medium {
 		margin-top: $container-small-padding-horizontal !important;
 	}
-}
-@media (max-width: $breakpoint-small-max) {
+
 	.ba-text-center-medium{
 		text-align: center;
+	}
+}
+@media (max-width: $breakpoint-medium-max) {
+	.ba-mt-large {
+		margin-top: $container-padding-horizontal !important;
 	}
 }
 @media (max-width: $breakpoint-mini-max) {

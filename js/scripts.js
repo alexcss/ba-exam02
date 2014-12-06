@@ -69,37 +69,30 @@ jQuery(function($){
 		reinitTimer = setTimeout(reinit_cycle, 100); // Timeout limits the number of calculations
 	});
 
+	$('.open-search').click(function(e) {
+		$('html').click(function(event) {
+			//check up the tree of the click target to check whether user has clicked outside of menu
+			if ($(event.target).parents('.search').length==0) {
+				// your code to hide menu
+				$('#show-search').prop('checked', false);
+				//this event listener has done its job so we can unbind it.
+				$(this).unbind(event);
+			}
+
+		})
+	});
+	$('.search-submit').click(function(e){
+		e.preventDefault();
+		if($('.search-box').val() != ''){
+			$('.search-form').submit();
+		} else {
+			$('#show-search').prop('checked', false);
+		}
+	});
+	//$(".search").blur(function(){
+	//	$('#show-search').prop('checked', false);
+	//});
 });
-//
-//window.smoothScrollTo = (function () {
-//	var timer, start, factor;
-//
-//	return function (target, duration) {
-//		var offset = window.pageYOffset,
-//			delta  = target - window.pageYOffset;
-//		duration = duration || 400;
-//		start = Date.now();
-//		factor = 0;
-//
-//		if( timer ) {
-//			clearInterval(timer);
-//		}
-//
-//		function step() {
-//			var y;
-//			factor = (Date.now() - start) / duration;
-//			if( factor >= 1 ) {
-//				clearInterval(timer);
-//				factor = 1;
-//			}
-//			y = factor * delta + offset;
-//			window.scrollBy(0, y - window.pageYOffset);
-//		}
-//
-//		timer = setInterval(step, 10);
-//		return timer;
-//	};
-//}());
 
 /* Add Map */
 var myOptions = {
@@ -116,3 +109,15 @@ var marker = new google.maps.Marker({
 	icon: 'images/pin.png'
 });
 marker.setMap(gMap);
+
+var marker1 = new google.maps.Marker({
+	position: new google.maps.LatLng(32.022683,-81.074004),
+	icon: 'images/pin.png'
+});
+marker1.setMap(gMap);
+
+var marker2 = new google.maps.Marker({
+	position: new google.maps.LatLng(32.017225,-81.073104),
+	icon: 'images/pin.png'
+});
+marker2.setMap(gMap);

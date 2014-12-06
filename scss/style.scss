@@ -90,13 +90,12 @@ img {
 .search{
 	position: relative;
 	.open-search{
-		display: inline-block;
+		display: block;
 		height: 110px;
 		line-height: 100px;
 		color: $primary;
 		font-size: 43px;
-		padding-left: 80px;
-		padding-right: 30px;
+		padding: 0 30px;
 		cursor: pointer;
 		@include transition(color .2s ease-in);
 		&:hover{
@@ -127,6 +126,7 @@ img {
 		position: absolute;
 		left: 0;
 		right: 0;
+		height: 100%;
 		width: 100%;
 		bottom: 0;
 		top: 0;
@@ -144,12 +144,17 @@ img {
 	width: 100%;
 	bottom: 0;
 	top: 0;
-	line-height: 70px;
-	font-size: 30px;
+	line-height: 100px;
+	font-size: 43px;
 	color: #fff;
 	background: $primary !important;
 	visibility: hidden;
 	opacity: 0;
+	@media (max-width: $breakpoint-xlarge-max) {
+		height: 70px;
+		line-height: 70px;
+		font-size: 30px;
+	}
 	&:hover{
 		background: #038ACA !important;
 	}
@@ -163,6 +168,9 @@ img {
 	list-style: none !important;
 	margin: 0;
 	padding: 0;
+	@media (min-width: $breakpoint-xxlarge) {
+		padding-right: 50px;
+	}
 	li{
 		float: left;
 		padding-left: 30px;
@@ -284,6 +292,12 @@ img {
 		background-position: 50% 50%;
 		padding: 200px 0;
 		width: 100%;
+		@media (max-width: $breakpoint-medium-max) {
+			padding: 100px 0;
+		}
+		@media (max-width: $breakpoint-small-max) {
+			padding-top: 50px;
+		}
 		.slide-title{
 			color: #ffffff;
 			font: 900 92px/1.1 "Lato", Arial, sans-serif;
@@ -302,6 +316,9 @@ img {
 		position: absolute;
 		bottom: 44px;
 		z-index: 110;
+		@media (max-width: $breakpoint-medium-max) {
+			bottom: 20px;
+		}
 		a{
 			display: inline-block;
 			background: #fff;
@@ -394,8 +411,20 @@ img {
 		margin-bottom: 10px;
 	}
 	.stones{
-		img + img{
-			margin-top: 2px;
+		img {
+			display: block;
+			width: 100%;
+			float: left;
+			& + img{
+				margin-top: 2px;
+			}
+			@media (max-width: $breakpoint-medium-max) {
+				width: 33.3333%;
+				& + img{
+					margin-top: 0;
+
+				}
+			}
 		}
 	}
 }
@@ -717,6 +746,8 @@ img {
 	}
 	.bar{
 		background: $primary;
+		position: relative;
+		white-space: nowrap;
 		&.bar-warning{
 			background: $warning;
 		}
@@ -729,10 +760,14 @@ img {
 	}
 	.percent{
 		float: right;
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
 		padding-left:8px;
 		padding-right: 8px;
 		background: #363A3F;
-		margin: -13px 0 -13px 10px;
+		margin: 0;
 	}
 	& + .progress-bar{
 		margin-top: 10px;
