@@ -1,0 +1,35 @@
+$contrast: #FF5722;
+$primary: #03a9f4;
+$danger: #E51C23;
+$warning: #FF9800;
+$success: #259B24;
+
+
+/* Breakpoints */
+
+$breakpoint-small: 480px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 960px;
+$breakpoint-xlarge: 1220px;
+$breakpoint-xxlarge: 1600px;
+
+$breakpoint-small-max: ($breakpoint-medium - 1);
+$breakpoint-mini-max: ($breakpoint-small - 1);
+$breakpoint-medium-max: ($breakpoint-large - 1);
+$breakpoint-large-max: ($breakpoint-xlarge - 1);
+$breakpoint-xlarge-max: ($breakpoint-xxlarge - 1);
+
+$container-max-width: 980px;
+$container-padding-horizontal: 30px;
+
+$container-small-padding-horizontal: 15px;
+
+$container-large-max-width: 1240px;
+$container-large-padding-horizontal: 35px;
+
+$align-horizontal: 15px;
+$align-vertical: 15px;
+
+$margin: 15px;
+$margin-small: 5px;
+$margin-large: 50px;

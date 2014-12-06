@@ -1,0 +1,121 @@
+/* Typo */
+a{
+	color: #03a9f3;
+	text-decoration: none;
+	@include transition(color .2s ease-out,background-color .2s ease-out,border-color .2s ease-out, opacity .2s ease-out, visibility .2s ease-out);
+	outline: none !important;
+	&:hover{
+		color: #FF5722;
+		text-decoration: none;
+	}
+}
+b, strong, .bold{
+	font-weight: bold;
+}
+
+h1,h2,h3,h4,h5,h6{
+	color: #263238;
+	font:300 16px/1.2 "Open Sans", Arial, sans-serif;
+	b, strong{
+		font-weight: 800;
+	}
+	a{
+		text-decoration: none;
+		color: #03a9f3;
+	}
+	margin: 0 0 35px;
+	&:last-child{
+		margin-bottom: 0;
+	}
+}
+h1 {
+	font-size: 80px;
+	text-transform: uppercase;
+}
+h2{
+	font-size:72px;
+	text-transform: uppercase;
+	letter-spacing: -2px;
+	@media (max-width: $breakpoint-small-max) {
+		font-size: 40px;
+	}
+}
+h3 {
+	font-size: 30px;
+}
+h4 {
+	font-size: 18px;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+h5,h6 {
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+p{
+	margin-bottom: 25px;
+	&:last-child{
+		margin-bottom: 0;
+	}
+}
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="password"],
+input[type="email"],
+select,
+textarea{
+	font:normal 18px/1.2 "Lato", Arial, sans-serif;
+	background: #EAE8E2;
+	padding: 18px 25px;
+	color: #263238;
+	border: 1px solid #263238;
+	outline: none !important;
+	@include border-radius(3px);
+	&:focus{
+		border-color: $primary;
+	}
+}
+button,
+.btn,
+input[type="button"],
+input[type="submit"]{
+	display: inline-block;
+	margin: 0;
+	cursor: pointer;
+	border: none;
+	font:400 18px/49px "Open Sans", Arial, sans-serif;
+	text-decoration: none !important;
+	text-transform: uppercase;
+	outline: none !important;
+	position: relative;
+	@include transition(color .2s ease-out,background-color .2s ease-out);
+	padding: 0 20px;
+	min-height: 49px;
+	color: #fff;
+	text-transform: uppercase;
+	background: #FF5722;
+	&:hover{
+		background: #03A0E1;
+		color: #fff;
+	}
+	&.more{
+		font-size: 16px;
+	}
+	&:active{
+		top: 1px;
+	}
+}
+.table{
+	display: table;
+	width: 100%;
+	.tr{
+		display: table-row;
+		width: 100%;
+		.td{
+			display: table-cell;
+			height: 100%;
+			vertical-align: middle;
+		}
+	}
+}
