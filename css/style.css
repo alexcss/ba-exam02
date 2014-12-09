@@ -610,22 +610,16 @@ img {
     -webkit-border-radius: 3px;
     border-radius: 3px 0 0 3px;
     border: none; }
-  #show-search:checked ~ .search-slide {
+  .open .search-slide {
     width: 260px; }
 
 .search-submit {
   display: block;
-  position: absolute;
-  padding: 0 !important;
-  width: 100%;
-  bottom: 0;
-  top: 0;
+  padding: 0 30px !important;
   line-height: 100px;
   font-size: 43px;
   color: #fff;
-  background: #03a9f4 !important;
-  visibility: hidden;
-  opacity: 0; }
+  background: #03a9f4 !important; }
   @media (max-width: 1599px) {
     .search-submit {
       height: 70px;
@@ -633,9 +627,6 @@ img {
       font-size: 30px; } }
   .search-submit:hover {
     background: #038ACA !important; }
-  #show-search:checked ~ .search-submit {
-    visibility: visible;
-    opacity: 1; }
 
 .menu {
   list-style: none !important;

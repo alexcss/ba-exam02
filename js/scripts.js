@@ -69,29 +69,43 @@ jQuery(function($){
 		reinitTimer = setTimeout(reinit_cycle, 100); // Timeout limits the number of calculations
 	});
 
-	$('.open-search').click(function(e) {
-		$('html').click(function(event) {
-			//check up the tree of the click target to check whether user has clicked outside of menu
-			if ($(event.target).parents('.search').length==0) {
-				// your code to hide menu
-				$('#show-search').prop('checked', false);
-				//this event listener has done its job so we can unbind it.
-				$(this).unbind(event);
-			}
 
-		})
-	});
-	$('.search-submit').click(function(e){
-		e.preventDefault();
-		if($('.search-box').val() != ''){
-			$('.search-form').submit();
-		} else {
-			$('#show-search').prop('checked', false);
-		}
-	});
-	//$(".search").blur(function(){
-	//	$('#show-search').prop('checked', false);
+
+
+	//$('.open-search').click(function(e) {
+		$('.search-box').focus();
 	//});
+	$('.search-submit').click(function(event){
+		event.preventDefault();
+		if($('.search').hasClass('open')){
+			if($('.search-box').val() != ''){
+				$('.search-form').submit();
+			} else {
+				$('.search').removeClass('open');
+			}
+		} else {
+			$('.search').addClass('open');
+			$('.search-box').focus();
+		}
+
+	});
+	$('html').click(function(event) {
+		//check up the tree of the click target to check whether user has clicked outside of menu
+		if ($(event.target).parents('.search').length==0) {
+			// your code to hide menu
+			$('.search').removeClass('open');
+			//this event listener has done its job so we can unbind it.
+			$(this).unbind(event);
+		}
+
+	})
+
+
+
+	//$('.search').blur(function(e){
+	//	$('.search').removeClass('open');
+	//});
+
 });
 
 /* Add Map */
